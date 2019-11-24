@@ -16,7 +16,7 @@ class GoTCell: UITableViewCell {
     @IBOutlet weak var numberLabel: UILabel!
     
     func configureCell(for gotEpisode: GOTEpisode)    {
-        episodeImage.image = UIImage(named: gotEpisode.mediumImageID)
+        episodeImage.image = UIImage(named: gotEpisode.originalImageID)
         nameLabel.text = gotEpisode.name
         seasonLabel.text = "S:\(gotEpisode.season.description)"
         numberLabel.text = "E:\(gotEpisode.number.description)"
