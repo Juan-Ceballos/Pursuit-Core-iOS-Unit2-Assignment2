@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E5C61E0238498FE00482854 /* GoTCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C61DF238498FE00482854 /* GoTCell.swift */; };
+		3E5C61E42384D16F00482854 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5C61E32384D16F00482854 /* DetailedViewController.swift */; };
 		57D0D22A219F70EA00B5753A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0D229219F70EA00B5753A /* AppDelegate.swift */; };
 		57D0D22C219F70EA00B5753A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0D22B219F70EA00B5753A /* ViewController.swift */; };
 		57D0D22F219F70EA00B5753A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D0D22D219F70EA00B5753A /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		3E5C61DF238498FE00482854 /* GoTCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoTCell.swift; sourceTree = "<group>"; };
+		3E5C61E32384D16F00482854 /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		57D0D226219F70EA00B5753A /* GameOfThrones.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameOfThrones.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D0D229219F70EA00B5753A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57D0D22B219F70EA00B5753A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				57D0D229219F70EA00B5753A /* AppDelegate.swift */,
 				57D0D22B219F70EA00B5753A /* ViewController.swift */,
+				3E5C61E32384D16F00482854 /* DetailedViewController.swift */,
 				57D0D22D219F70EA00B5753A /* Main.storyboard */,
 				3E5C61DF238498FE00482854 /* GoTCell.swift */,
 				57D0D23B219F719C00B5753A /* GOTEpisdoe.swift */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E5C61E42384D16F00482854 /* DetailedViewController.swift in Sources */,
 				57D0D23C219F719C00B5753A /* GOTEpisdoe.swift in Sources */,
 				57D0D22C219F70EA00B5753A /* ViewController.swift in Sources */,
 				3E5C61E0238498FE00482854 /* GoTCell.swift in Sources */,

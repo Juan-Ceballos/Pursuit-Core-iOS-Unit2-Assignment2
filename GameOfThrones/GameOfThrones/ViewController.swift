@@ -22,6 +22,8 @@ class ViewController: UIViewController {
         seasons = GOTEpisode.getSeasons()
     }
     
+    var episode: GOTEpisode?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //dump(GOTEpisode.getSeasons())
@@ -30,6 +32,22 @@ class ViewController: UIViewController {
         loadData()
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)    {
+        
+        //1. we need a reference to the country detail controller
+        //2. which indexPath got selected so we can retrieve the country at the indexPath
+        guard let detailedViewController = segue.destination as? DetailedViewController, let indexPath = tableView.indexPathForSelectedRow else  {
+            //return
+            fatalError("country detail controller, indexPath failed to be configure")
+        }
+        
+        //3. we will use the indexPath to get the selected country
+        //4. then we will set the countryDC.country property
+        let episode = seasons[indexPath.section][indexPath.row]
+        detailedViewController.episode = episode //this needs to be set or it will be nill in country detail controller
+    }
+    
 }
 
 extension ViewController: UITableViewDataSource {
@@ -39,31 +57,30 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        var cell: GoTCell!
+        
         if seasons[indexPath.section][indexPath.row].season  % 2 == 1 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "gotCellLeft") as? GoTCell
+            guard let gotCell = tableView.dequeueReusableCell(withIdentifier: "gotCellLeft") as? GoTCell
                 else{
                     fatalError("cellForRow")
             }
-            
-            let season = seasons[indexPath.section][indexPath.row]
-            cell.configureCell(for: season)
-            return cell
-            
+            cell = gotCell
         }
         else    {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "gotCellRight") as? GoTCell
+            guard let gotCell = tableView.dequeueReusableCell(withIdentifier: "gotCellRight") as? GoTCell
                 else{
                     fatalError("cellForRow")
             }
-            
-            let season = seasons[indexPath.section][indexPath.row]
-            cell.configureCell(for: season)
-            return cell
+            cell = gotCell
         }
+        
+        let season = seasons[indexPath.section][indexPath.row]
+        cell.configureCell(for: season)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return seasons[section].first?.season.description
+        return "Season \(seasons[section].first?.season.description ?? "default")"
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
